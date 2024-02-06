@@ -8,5 +8,5 @@
 import CoreData
 
 struct PersistenceController {
-    
+    var
 }
