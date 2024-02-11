@@ -11,42 +11,58 @@ import SwiftUI
 struct TradeSummary: View {
     var trade: OptionTrade
     
-    
     var body: some View {
-        VStack {
-            HStack {
-                Text(trade.ticker ?? "N/A")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                Text("$\(calcProfit())")
-                    .font(.title2)
+            VStack {
+                HStack {
+                    Text(trade.ticker ?? "N/A")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                    Spacer()
+                    Text("\(calcProfit())")
+                        .font(.title2)
+                        
+                    
+                    
+                }
+                .frame(width: 300)
+                HStack {
+                    Text(formatPurchase())
+                        .foregroundStyle(.white)
+                    Spacer()
+                    Text(formatDate())
+                        .foregroundStyle(.white)
+                }
+                .frame(width: 300)
             }
-            .frame(width: 250)
-            HStack {
-                Text(formatPurchase())
-                Spacer()
-                Text(formatDate())
-            }
-            .frame(width: 250)
-        }
         
     }
-    func calcProfit() -> String {
-        let profit = (trade.sPrice - trade.bPrice) * 100
+    func calcProfit() -> Text {
+        var toReturn: String = "$"
+        let profit = (trade.sPrice - trade.bPrice) * 100 * Double(trade.quantity)
+        var color: Color
+        
+        if (profit > 0) {
+            color = .green
+        } else {
+            color = .red
+        }
         
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         
-        return formatter.string(from: NSNumber(value: profit)) ?? ""
+        toReturn.append(formatter.string(from: NSNumber(value: profit)) ?? "")
+        return Text(toReturn)
+            .font(.title)
+            .foregroundStyle(color)
     }
     func formatPurchase() -> String {
         let quantity: Int64 = trade.quantity
         var toReturn: String = "\(quantity)"
 
-        if quantity >= 1 {
+        if quantity > 1 {
 
             toReturn.append(trade.callPut ? " calls" : " puts")
         } else {
