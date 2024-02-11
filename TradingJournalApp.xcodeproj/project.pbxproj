@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		006A35072B72A9E40090F1E3 /* TradingJournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35062B72A9E40090F1E3 /* TradingJournalAppApp.swift */; };
+		006A35072B72A9E40090F1E3 /* TradingJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */; };
 		006A35092B72A9E40090F1E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35082B72A9E40090F1E3 /* ContentView.swift */; };
 		006A350B2B72A9E50090F1E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A350A2B72A9E50090F1E3 /* Assets.xcassets */; };
 		006A350E2B72A9E50090F1E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A350D2B72A9E50090F1E3 /* Preview Assets.xcassets */; };
+		006A35172B72AA2D0090F1E3 /* TradeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 006A35152B72AA2D0090F1E3 /* TradeStore.xcdatamodeld */; };
+		006A35192B72B26F0090F1E3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35182B72B26F0090F1E3 /* DataController.swift */; };
+		006A351C2B72B7430090F1E3 /* TradeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A351B2B72B7430090F1E3 /* TradeLogView.swift */; };
+		006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A351E2B792BEB0090F1E3 /* TradeSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		006A35032B72A9E40090F1E3 /* TradingJournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingJournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		006A35062B72A9E40090F1E3 /* TradingJournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingJournalAppApp.swift; sourceTree = "<group>"; };
+		006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingJournalApp.swift; sourceTree = "<group>"; };
 		006A35082B72A9E40090F1E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		006A350A2B72A9E50090F1E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006A350D2B72A9E50090F1E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		006A35162B72AA2D0090F1E3 /* TradeStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradeStore.xcdatamodel; sourceTree = "<group>"; };
+		006A35182B72B26F0090F1E3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		006A351B2B72B7430090F1E3 /* TradeLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeLogView.swift; sourceTree = "<group>"; };
+		006A351E2B792BEB0090F1E3 /* TradeSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +59,10 @@
 		006A35052B72A9E40090F1E3 /* TradingJournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				006A35062B72A9E40090F1E3 /* TradingJournalAppApp.swift */,
+				006A351D2B792B5F0090F1E3 /* Trades */,
+				006A351A2B72B72D0090F1E3 /* TradeLog */,
+				006A35142B72A9EF0090F1E3 /* Data */,
+				006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */,
 				006A35082B72A9E40090F1E3 /* ContentView.swift */,
 				006A350A2B72A9E50090F1E3 /* Assets.xcassets */,
 				006A350C2B72A9E50090F1E3 /* Preview Content */,
@@ -65,6 +76,31 @@
 				006A350D2B72A9E50090F1E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		006A35142B72A9EF0090F1E3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				006A35152B72AA2D0090F1E3 /* TradeStore.xcdatamodeld */,
+				006A35182B72B26F0090F1E3 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		006A351A2B72B72D0090F1E3 /* TradeLog */ = {
+			isa = PBXGroup;
+			children = (
+				006A351B2B72B7430090F1E3 /* TradeLogView.swift */,
+			);
+			path = TradeLog;
+			sourceTree = "<group>";
+		};
+		006A351D2B792B5F0090F1E3 /* Trades */ = {
+			isa = PBXGroup;
+			children = (
+				006A351E2B792BEB0090F1E3 /* TradeSummary.swift */,
+			);
+			path = Trades;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006A35172B72AA2D0090F1E3 /* TradeStore.xcdatamodeld in Sources */,
+				006A35192B72B26F0090F1E3 /* DataController.swift in Sources */,
+				006A351C2B72B7430090F1E3 /* TradeLogView.swift in Sources */,
+				006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */,
 				006A35092B72A9E40090F1E3 /* ContentView.swift in Sources */,
-				006A35072B72A9E40090F1E3 /* TradingJournalAppApp.swift in Sources */,
+				006A35072B72A9E40090F1E3 /* TradingJournalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		006A35152B72AA2D0090F1E3 /* TradeStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				006A35162B72AA2D0090F1E3 /* TradeStore.xcdatamodel */,
+			);
+			currentVersion = 006A35162B72AA2D0090F1E3 /* TradeStore.xcdatamodel */;
+			path = TradeStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 006A34FB2B72A9E40090F1E3 /* Project object */;
 }

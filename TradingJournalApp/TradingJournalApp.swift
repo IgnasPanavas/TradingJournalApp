@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct TradingJournalAppApp: App {
+struct TradingJournalApp: App {
+    let dataController = DataController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
