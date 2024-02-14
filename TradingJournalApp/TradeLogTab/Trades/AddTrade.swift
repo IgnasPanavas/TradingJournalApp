@@ -13,7 +13,7 @@ struct AddTrade: View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Trade Details")) {
                     TextField("Ticker", text: $viewModel.ticker)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		006A35072B72A9E40090F1E3 /* TradingJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */; };
-		006A35092B72A9E40090F1E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35082B72A9E40090F1E3 /* ContentView.swift */; };
 		006A350B2B72A9E50090F1E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A350A2B72A9E50090F1E3 /* Assets.xcassets */; };
 		006A350E2B72A9E50090F1E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006A350D2B72A9E50090F1E3 /* Preview Assets.xcassets */; };
 		006A35172B72AA2D0090F1E3 /* TradeStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 006A35152B72AA2D0090F1E3 /* TradeStore.xcdatamodeld */; };
@@ -17,12 +16,14 @@
 		006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A351E2B792BEB0090F1E3 /* TradeSummary.swift */; };
 		006A35212B795DC50090F1E3 /* AddTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35202B795DC50090F1E3 /* AddTrade.swift */; };
 		006A35232B7960710090F1E3 /* AddTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35222B7960710090F1E3 /* AddTradeViewModel.swift */; };
+		00AACF162B7C5FC300821F21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF152B7C5FC300821F21 /* MainTabView.swift */; };
+		00AACF1B2B7C627C00821F21 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF1A2B7C627C00821F21 /* StatsView.swift */; };
+		00AACF1D2B7C62C100821F21 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF1C2B7C62C100821F21 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		006A35032B72A9E40090F1E3 /* TradingJournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingJournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingJournalApp.swift; sourceTree = "<group>"; };
-		006A35082B72A9E40090F1E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		006A350A2B72A9E50090F1E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006A350D2B72A9E50090F1E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		006A35162B72AA2D0090F1E3 /* TradeStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TradeStore.xcdatamodel; sourceTree = "<group>"; };
@@ -31,6 +32,9 @@
 		006A351E2B792BEB0090F1E3 /* TradeSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSummary.swift; sourceTree = "<group>"; };
 		006A35202B795DC50090F1E3 /* AddTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrade.swift; sourceTree = "<group>"; };
 		006A35222B7960710090F1E3 /* AddTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTradeViewModel.swift; sourceTree = "<group>"; };
+		00AACF152B7C5FC300821F21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		00AACF1A2B7C627C00821F21 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		00AACF1C2B7C62C100821F21 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +67,14 @@
 		006A35052B72A9E40090F1E3 /* TradingJournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				006A351D2B792B5F0090F1E3 /* Trades */,
-				006A351A2B72B72D0090F1E3 /* TradeLog */,
+				00AACF192B7C624500821F21 /* App */,
+				00AACF182B7C623800821F21 /* OverviewTab */,
+				00AACF172B7C622500821F21 /* StatsTab */,
+				006A351A2B72B72D0090F1E3 /* TradeLogTab */,
 				006A35142B72A9EF0090F1E3 /* Data */,
-				006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */,
-				006A35082B72A9E40090F1E3 /* ContentView.swift */,
 				006A350A2B72A9E50090F1E3 /* Assets.xcassets */,
 				006A350C2B72A9E50090F1E3 /* Preview Content */,
+				00AACF152B7C5FC300821F21 /* MainTabView.swift */,
 			);
 			path = TradingJournalApp;
 			sourceTree = "<group>";
@@ -91,12 +96,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		006A351A2B72B72D0090F1E3 /* TradeLog */ = {
+		006A351A2B72B72D0090F1E3 /* TradeLogTab */ = {
 			isa = PBXGroup;
 			children = (
+				006A351D2B792B5F0090F1E3 /* Trades */,
 				006A351B2B72B7430090F1E3 /* TradeLogView.swift */,
 			);
-			path = TradeLog;
+			path = TradeLogTab;
 			sourceTree = "<group>";
 		};
 		006A351D2B792B5F0090F1E3 /* Trades */ = {
@@ -107,6 +113,30 @@
 				006A35222B7960710090F1E3 /* AddTradeViewModel.swift */,
 			);
 			path = Trades;
+			sourceTree = "<group>";
+		};
+		00AACF172B7C622500821F21 /* StatsTab */ = {
+			isa = PBXGroup;
+			children = (
+				00AACF1A2B7C627C00821F21 /* StatsView.swift */,
+			);
+			path = StatsTab;
+			sourceTree = "<group>";
+		};
+		00AACF182B7C623800821F21 /* OverviewTab */ = {
+			isa = PBXGroup;
+			children = (
+				00AACF1C2B7C62C100821F21 /* OverviewView.swift */,
+			);
+			path = OverviewTab;
+			sourceTree = "<group>";
+		};
+		00AACF192B7C624500821F21 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,11 +212,13 @@
 				006A35212B795DC50090F1E3 /* AddTrade.swift in Sources */,
 				006A35172B72AA2D0090F1E3 /* TradeStore.xcdatamodeld in Sources */,
 				006A35192B72B26F0090F1E3 /* DataController.swift in Sources */,
+				00AACF1D2B7C62C100821F21 /* OverviewView.swift in Sources */,
 				006A351C2B72B7430090F1E3 /* TradeLogView.swift in Sources */,
 				006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */,
-				006A35092B72A9E40090F1E3 /* ContentView.swift in Sources */,
 				006A35072B72A9E40090F1E3 /* TradingJournalApp.swift in Sources */,
+				00AACF162B7C5FC300821F21 /* MainTabView.swift in Sources */,
 				006A35232B7960710090F1E3 /* AddTradeViewModel.swift in Sources */,
+				00AACF1B2B7C627C00821F21 /* StatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ struct TradeLogView: View {
     // FetchRequest with sorting by date
     @FetchRequest(
         entity: OptionTrade.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \OptionTrade.date, ascending: true)]
+        sortDescriptors: [NSSortDescriptor(keyPath: \OptionTrade.date, ascending: false)]
         // Set to false if you want descending order
     ) var optionTrades: FetchedResults<OptionTrade>
     
@@ -47,7 +47,7 @@ struct TradeLogView: View {
                             .foregroundStyle(.white)
                             .font(.title)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.leading], 50)
+                            .padding([.leading], 40)
                         
                         ForEach(openTrades) { trade in
                             Divider()
@@ -107,6 +107,7 @@ struct TradeLogView: View {
 struct TradeLogView_Previews: PreviewProvider {
     static var previews: some View {
         TradeLogView().environment(\.managedObjectContext, DataController.shared.container.viewContext)
+            
             
     }
 }
