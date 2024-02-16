@@ -10,6 +10,8 @@ import SwiftUI
 
 struct TradeSummary: View {
     var trade: OptionTrade
+    @State private var showEditTradeView = false
+
     
     var body: some View {
             VStack {
@@ -34,6 +36,12 @@ struct TradeSummary: View {
                         .foregroundStyle(.white)
                 }
                 .frame(width: 300)
+            }
+            .onTapGesture {
+                showEditTradeView.toggle()
+            }
+            .sheet(isPresented: $showEditTradeView) {
+                EditTradeView(tradeToEdit: trade)
             }
         
     }

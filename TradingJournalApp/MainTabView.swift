@@ -19,8 +19,10 @@ struct MainTabView: View {
                     Image(systemName: "chart.bar")
                 }
             OverviewView()
+                .environment(\.managedObjectContext, viewContext)
                 .tabItem {
                     Image(systemName: "person")
+                        .foregroundStyle(Color.white)
                 }
             TradeLogView()
                 .environment(\.managedObjectContext, viewContext)

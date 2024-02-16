@@ -15,10 +15,14 @@
 		006A351C2B72B7430090F1E3 /* TradeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A351B2B72B7430090F1E3 /* TradeLogView.swift */; };
 		006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A351E2B792BEB0090F1E3 /* TradeSummary.swift */; };
 		006A35212B795DC50090F1E3 /* AddTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35202B795DC50090F1E3 /* AddTrade.swift */; };
-		006A35232B7960710090F1E3 /* AddTradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35222B7960710090F1E3 /* AddTradeViewModel.swift */; };
+		006A35232B7960710090F1E3 /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A35222B7960710090F1E3 /* TradeViewModel.swift */; };
 		00AACF162B7C5FC300821F21 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF152B7C5FC300821F21 /* MainTabView.swift */; };
 		00AACF1B2B7C627C00821F21 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF1A2B7C627C00821F21 /* StatsView.swift */; };
 		00AACF1D2B7C62C100821F21 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF1C2B7C62C100821F21 /* OverviewView.swift */; };
+		00AACF202B7F042100821F21 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF1F2B7F042100821F21 /* Calender.swift */; };
+		00AACF222B7F0AD400821F21 /* TopPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF212B7F0AD400821F21 /* TopPerformer.swift */; };
+		00AACF242B7F0FB400821F21 /* OptionTrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF232B7F0FB400821F21 /* OptionTrade.swift */; };
+		00AACF262B7F127F00821F21 /* EditTradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AACF252B7F127F00821F21 /* EditTradeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +35,14 @@
 		006A351B2B72B7430090F1E3 /* TradeLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeLogView.swift; sourceTree = "<group>"; };
 		006A351E2B792BEB0090F1E3 /* TradeSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeSummary.swift; sourceTree = "<group>"; };
 		006A35202B795DC50090F1E3 /* AddTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrade.swift; sourceTree = "<group>"; };
-		006A35222B7960710090F1E3 /* AddTradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTradeViewModel.swift; sourceTree = "<group>"; };
+		006A35222B7960710090F1E3 /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
 		00AACF152B7C5FC300821F21 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		00AACF1A2B7C627C00821F21 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		00AACF1C2B7C62C100821F21 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		00AACF1F2B7F042100821F21 /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
+		00AACF212B7F0AD400821F21 /* TopPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPerformer.swift; sourceTree = "<group>"; };
+		00AACF232B7F0FB400821F21 /* OptionTrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTrade.swift; sourceTree = "<group>"; };
+		00AACF252B7F127F00821F21 /* EditTradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,7 @@
 		006A35052B72A9E40090F1E3 /* TradingJournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				00AACF1E2B7F041400821F21 /* Extensions */,
 				00AACF192B7C624500821F21 /* App */,
 				00AACF182B7C623800821F21 /* OverviewTab */,
 				00AACF172B7C622500821F21 /* StatsTab */,
@@ -110,7 +119,8 @@
 			children = (
 				006A351E2B792BEB0090F1E3 /* TradeSummary.swift */,
 				006A35202B795DC50090F1E3 /* AddTrade.swift */,
-				006A35222B7960710090F1E3 /* AddTradeViewModel.swift */,
+				006A35222B7960710090F1E3 /* TradeViewModel.swift */,
+				00AACF252B7F127F00821F21 /* EditTradeView.swift */,
 			);
 			path = Trades;
 			sourceTree = "<group>";
@@ -127,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				00AACF1C2B7C62C100821F21 /* OverviewView.swift */,
+				00AACF212B7F0AD400821F21 /* TopPerformer.swift */,
 			);
 			path = OverviewTab;
 			sourceTree = "<group>";
@@ -137,6 +148,15 @@
 				006A35062B72A9E40090F1E3 /* TradingJournalApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		00AACF1E2B7F041400821F21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				00AACF1F2B7F042100821F21 /* Calender.swift */,
+				00AACF232B7F0FB400821F21 /* OptionTrade.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				006A35212B795DC50090F1E3 /* AddTrade.swift in Sources */,
+				00AACF202B7F042100821F21 /* Calender.swift in Sources */,
+				00AACF222B7F0AD400821F21 /* TopPerformer.swift in Sources */,
+				00AACF262B7F127F00821F21 /* EditTradeView.swift in Sources */,
+				00AACF242B7F0FB400821F21 /* OptionTrade.swift in Sources */,
 				006A35172B72AA2D0090F1E3 /* TradeStore.xcdatamodeld in Sources */,
 				006A35192B72B26F0090F1E3 /* DataController.swift in Sources */,
 				00AACF1D2B7C62C100821F21 /* OverviewView.swift in Sources */,
@@ -217,7 +241,7 @@
 				006A351F2B792BEB0090F1E3 /* TradeSummary.swift in Sources */,
 				006A35072B72A9E40090F1E3 /* TradingJournalApp.swift in Sources */,
 				00AACF162B7C5FC300821F21 /* MainTabView.swift in Sources */,
-				006A35232B7960710090F1E3 /* AddTradeViewModel.swift in Sources */,
+				006A35232B7960710090F1E3 /* TradeViewModel.swift in Sources */,
 				00AACF1B2B7C627C00821F21 /* StatsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

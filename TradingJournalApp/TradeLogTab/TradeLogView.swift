@@ -41,46 +41,47 @@ struct TradeLogView: View {
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .padding([.top, .bottom], 20)
                         .foregroundStyle(.white)
-                    
-                    VStack {
-                        Text("Ongoing")
-                            .foregroundStyle(.white)
-                            .font(.title)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding([.leading], 40)
-                        
-                        ForEach(openTrades) { trade in
-                            Divider()
-                                .background(.white)
-                            TradeSummary(trade: trade)
-                                .padding()
+                    ScrollView {
+                        VStack {
+                            Text("Ongoing")
+                                .foregroundStyle(.white)
+                                .font(.title)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding([.leading], 40)
+                            
+                            ForEach(openTrades) { trade in
+                                Divider()
+                                    .background(.white)
+                                TradeSummary(trade: trade)
+                                    .padding()
+                                
+                            }
                             
                         }
+                        .padding([.bottom], 50)
                         
-                    }
-                    .padding([.bottom], 50)
-                    
-                    VStack {
-                        Text("Closed")
-                            .font(.title)
-                            .opacity(0.5)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundStyle(.white)
-                            .padding([.leading], 40)
-                        
-                        
-                        ForEach(closedTrades) { trade in
-                            Divider()
-                                .background(.white)
-                            TradeSummary(trade: trade)
-                                .padding()
+                        VStack {
+                            Text("Closed")
+                                .font(.title)
                                 .opacity(0.5)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundStyle(.white)
+                                .padding([.leading], 40)
+                            
+                            
+                            ForEach(closedTrades) { trade in
+                                Divider()
+                                    .background(.white)
+                                TradeSummary(trade: trade)
+                                    .padding()
+                                    .opacity(0.5)
+                                
+                            }
                             
                         }
                         
+                        Spacer()
                     }
-                    
-                    Spacer()
                 }
             }
             .toolbar {

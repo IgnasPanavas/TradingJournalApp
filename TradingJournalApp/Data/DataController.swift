@@ -38,7 +38,7 @@ class DataController: ObservableObject {
     
     func addOptionTrade(expDate: Date, bPrice: Double, sPrice: Double, strike: Int64, quantity: Int64, callPut: Bool, symbol: String, note: String?, closed: Bool) {
         
-        var OptionTradeEntity = OptionTrade(context: context)
+        let OptionTradeEntity = OptionTrade(context: context)
         
         OptionTradeEntity.date = Date()
         OptionTradeEntity.strike = strike
@@ -55,6 +55,22 @@ class DataController: ObservableObject {
         
         
     }
+    func editOptionTrade(trade: OptionTrade, newExpDate: Date? = nil, newBPrice: Double? = nil, newSPrice: Double? = nil, newStrike: Int64? = nil, newQuantity: Int64? = nil, newCallPut: Bool? = nil, newSymbol: String? = nil, newNote: String? = nil, newClosed: Bool? = nil) {
+        
+        // Update properties only if new values are provided
+        trade.expDate = newExpDate ?? trade.expDate
+        trade.bPrice = newBPrice ?? trade.bPrice
+        trade.sPrice = newSPrice ?? trade.sPrice
+        trade.strike = newStrike ?? trade.strike
+        trade.quantity = newQuantity ?? trade.quantity
+        trade.callPut = newCallPut ?? trade.callPut
+        trade.ticker = newSymbol ?? trade.ticker
+        trade.note = newNote ?? trade.note
+        trade.closed = newClosed ?? trade.closed
+
+        save(context: context)
+    }
+
     
     func removeOptionTrade(id: UUID) {
         let fetchRequest: NSFetchRequest<OptionTrade> = OptionTrade.fetchRequest()

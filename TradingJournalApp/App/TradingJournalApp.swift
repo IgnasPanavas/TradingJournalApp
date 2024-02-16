@@ -13,7 +13,7 @@ struct TradingJournalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TradeLogView()
+            MainTabView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
