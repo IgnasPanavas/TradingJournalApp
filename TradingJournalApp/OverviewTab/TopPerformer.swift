@@ -9,81 +9,67 @@ import CoreData
 import SwiftUI
 
 struct TopPerformer: View {
-    
-    var trade: OptionTrade
+    @Environment(\.theme) var theme
+    var trade: AnyTrade
+    var width: CGFloat
     
     var body: some View {
-        
-        ZStack {
-            Rectangle()
-                .fill(Color.black.opacity(0.5))
-                .frame(width: 350, height: 60)
-            HStack {
-                Text(trade.ticker ?? "")
-                    .foregroundStyle(Color.white)
-                Spacer()
-                Text(formatPurchase())
-                    .foregroundStyle(Color.white)
-                Spacer()
-                calcProfit()
-                    
-                
-            }
-            .frame(width: 300, height: 80)
-                
-        }
-    }
-    func formatPurchase() -> String {
-        let quantity: Int64 = trade.quantity
-        var toReturn: String = "\(quantity)"
 
-        if quantity > 1 {
+        HStack {
+                   Text(trade.ticker)
+                       .foregroundColor(theme.textColor)
+                       .font(.headline)
+                       .frame(width: width * 0.3, alignment: .leading) // Set a fixed width for the ticker
+                   
+                   formatPurchase(trade: trade)
+                .frame(width: width * 0.4, alignment: .center) // Set a fixed width for the purchase information
+                   
+                   formatProfit(trade: trade)
+                .frame(width: width * 0.3, alignment: .trailing) // Set a fixed width for the profit information
+                }
+                .frame(maxWidth: width)
+                .padding()
+                
 
-            toReturn.append(trade.callPut ? " calls" : " puts")
-        } else {
-            toReturn.append(trade.callPut ? " call" : " put")
-        }
-        toReturn.append(" @ \(trade.bPrice)")
-        return toReturn
-    }
-    func calcProfit() -> Text {
-        var toReturn: String = "$"
-        let profit = (trade.sPrice - trade.bPrice) * 100 * Double(trade.quantity)
-        var color: Color
-        
-        if (profit > 0) {
-            color = .green
-        } else {
-            color = .red
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        
-        toReturn.append(formatter.string(from: NSNumber(value: profit)) ?? "")
-        return Text(toReturn)
-            .font(.title3)
-            .foregroundStyle(color)
-    }
+   }
+   
+   private func formatPurchase(trade: AnyTrade) -> Text {
+       let type = trade.tradeType
+       let quantity = Int(trade.quantity)
+       let formattedQuantity = NumberFormatter.localizedString(from: NSNumber(value: quantity), number: .decimal)
+       var toReturn = "\(formattedQuantity) "
+       
+       switch type {
+       case .stockTrade:
+           toReturn.append("share")
+       case .optionTrade:
+           toReturn.append("contracts")
+       case .futureTrade:
+           toReturn.append("contracts")
+       default:
+           fatalError("Unhandled Trade Type")
+       }
+       
+       toReturn.append(" @ \(trade.buyPrice)")
+       return Text(toReturn)
+           .foregroundColor(theme.textColor)
+           .font(.subheadline)
+   }
+   
+   private func formatProfit(trade: AnyTrade) -> Text {
+       let profit = trade.calcProfit()
+       let formattedProfit = NumberFormatter.localizedString(from: NSNumber(value: profit), number: .decimal)
+       var color: Color
+       
+       if (profit > 0) {
+           color = .green
+       } else {
+           color = .red
+       }
+       
+       return Text("$\(formattedProfit)")
+           .font(.title3)
+           .foregroundColor(color)
+   }
 }
 
-struct TopPerformer_Preview: PreviewProvider {
-    static var previews: some View {
-        let context = DataController.shared.container.viewContext
-
-        // Attempt to fetch an existing OptionTrade from the context
-        let fetchRequest: NSFetchRequest<OptionTrade> = OptionTrade.fetchRequest()
-        
-        let result = try? context.fetch(fetchRequest)
-        if let existingTrade = result?.first {
-            // Pass the fetched trade to the TradeSummary view
-            TopPerformer(trade: existingTrade)
-        } else {
-            // Fallback content in case no trades were found
-            Text("No trades available")
-        }
-    }
-    
-}

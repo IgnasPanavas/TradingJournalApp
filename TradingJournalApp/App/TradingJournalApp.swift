@@ -6,15 +6,36 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import GoogleSignIn
 
 @main
 struct TradingJournalApp: App {
+    @State private var showOnboarding = true
+    @StateObject var authenticationManager = AuthenticationManager()
+        
+    
     let dataController = DataController.shared
     
+
+    let mainTabView = MainTabView()
+    
+    init() {
+        FirebaseApp.configure()
+        }
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+                ContentView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+                    .environmentObject(SignInViewModel())
+                    .environmentObject(AccountModel())
+                    
+                    .opacity(authenticationManager.isAuthenticationSuccessful ? 1 : 0.2)
+                    .onAppear {
+                        authenticationManager.authenticate()
+                    }
+                    .disabled(!authenticationManager.isAuthenticationSuccessful)
         }
     }
 }
+
